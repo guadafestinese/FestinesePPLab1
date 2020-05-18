@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1589833066 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebooks.h"
+	"marcas.h"
+	"tipos.h"
+	"servicios.h"
+	"trabajos.h"
+
+1589833138 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\notebooks.h
+	"tipos.h"
+	"marcas.h"
+
+1589833215 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\tipos.h
+
+1589833104 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\marcas.h
+
+1589833180 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\servicios.h
+
+1589833245 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\trabajos.h
+	"tipos.h"
+	"notebooks.h"
+	"marcas.h"
+	"servicios.h"
+
+1589833089 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\marcas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marcas.h"
+
+1589833121 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\notebooks.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebooks.h"
+
+1589833163 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\servicios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicios.h"
+
+1589833199 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\tipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipos.h"
+
+1589833229 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\trabajos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"trabajos.h"
+	"notebooks.h"
+
