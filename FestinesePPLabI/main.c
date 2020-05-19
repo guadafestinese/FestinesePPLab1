@@ -91,7 +91,7 @@ int main()
         break;
 
     case 10:
-        printf("Confirma salida?: \n");
+        printf("Confirma salida?: Ingrese s o n \n");
         fflush(stdin);
         scanf("%c", &confirma);
         if(confirma == 's')

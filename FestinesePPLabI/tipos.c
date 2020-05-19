@@ -19,14 +19,15 @@ void listarTipos(eTipo tipos[], int tamTipos)
 
 //----------------------------------------------------------------------
 void cargarDescripcionTipo (char descripcion[], int id, eTipo tipos[], int tamTipo){
-//int todoOk=0;
-	for (int i=0; i<tamTipo; i++){
-	if (tipos[i].id == id){
-	strcpy(descripcion, tipos[i].descripcion);
-	//todoOk=1;
+
+	for (int i=0; i<tamTipo; i++)
+	{
+        if (tipos[i].id == id)
+        {
+            strcpy(descripcion, tipos[i].descripcion);
+        }
 	}
-	}
-	//return todoOk;
+
 }
 
 

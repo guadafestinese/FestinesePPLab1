@@ -74,7 +74,8 @@ int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eM
 
 
     for(i=0; i<tam; i++){
-        if(notebooks[i].isEmpty == 1){
+        if(notebooks[i].isEmpty == 1)
+        {
 
 
             printf("Ingrese modelo: \n");
@@ -86,7 +87,8 @@ int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eM
             printf("Ingrese idMarca: \n");
             fflush(stdin);
             scanf("%d", &auxNotebook.idMarca);
-            while(auxNotebook.idMarca<1 || auxNotebook.idMarca>4){
+            while(auxNotebook.idMarca<1 || auxNotebook.idMarca>4)
+            {
                 listarMarcas(marcas, tamMarcas);
                 printf("Error, no ingreso un id valido. Ingrese id marca: \n");
                 fflush(stdin);
@@ -96,7 +98,8 @@ int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eM
             listarTipos(tipos, tamTipos);
             printf("Ingrese idTipo: \n");
             scanf("%d", &auxNotebook.idTipo);
-            while(auxNotebook.idTipo <1 || auxNotebook.idTipo>4){
+            while(auxNotebook.idTipo <1 || auxNotebook.idTipo>4)
+            {
                 listarTipos(tipos, tamTipos);
                 printf("Error, no ingreso un id valido. Ingrese id tipo: \n");
                 fflush(stdin);
@@ -105,6 +108,11 @@ int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eM
 
             printf("Ingrese precio: \n");
             scanf("%f", &auxNotebook.precio);
+            while(auxNotebook.precio <0)
+            {
+                printf("Error, ingrese un precio mayor a 0\n");
+                scanf("%f", &auxNotebook.precio);
+            }
 
 
             auxNotebook.isEmpty = 0;
@@ -129,46 +137,50 @@ int buscarNotebook(int id, eNotebook notebooks[], int tam){
 
 int indice= -1;
 
-for(int i=0; i<tam; i++){
-if(notebooks[i].id == id){
-indice= i;
-break;
-}
-}
+    for(int i=0; i<tam; i++)
+    {
+        if(notebooks[i].id == id)
+        {
+            indice= i;
+            break;
+        }
+    }
 return indice;
 }
 
 //------------------------------------------------------------
 void mostrarNotebook(eNotebook note, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca)
 {
- if(note.isEmpty == 0){
-    char descripcionMarca [20];
-	char descripcionTipo[20];
-    cargarDescripcionMarca(descripcionMarca, note.idMarca, marcas, tamMarca);
-    cargarDescripcionTipo(descripcionTipo, note.idTipo, tipos, tamTipo);
+ if(note.isEmpty == 0)
+    {
+        char descripcionMarca [20];
+        char descripcionTipo[20];
+        cargarDescripcionMarca(descripcionMarca, note.idMarca, marcas, tamMarca);
+        cargarDescripcionTipo(descripcionTipo, note.idTipo, tipos, tamTipo);
 
-    printf("%d 	%10s   %10s    %10s   %.2f\n", note.id, note.modelo, descripcionMarca, descripcionTipo, note.precio);
+        printf("%d 	%10s   %10s    %10s   %.2f\n", note.id, note.modelo, descripcionMarca, descripcionTipo, note.precio);
     }
 
 }
 
 //-----------------------------------------------------------------
 void mostrarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca){
-    int flag=0;
 
+int flag=0;
 system("cls");
 printf("****** LISTA NOTEBOOKS ******\n");
 printf("ID	      Modelo	  Marca      	Tipo	 Precio	\n");
 
-for(int i=0; i<tam; i++){
+    for(int i=0; i<tam; i++)
+    {
+        mostrarNotebook(notebooks[i], tipos, tamTipo, marcas, tamMarca);
+        flag=1;
+    }
 
-mostrarNotebook(notebooks[i], tipos, tamTipo, marcas, tamMarca);
-flag=1;
-}
-
-if(flag==0){
-printf("No hay notebooks que mostrar\n");
-}
+    if(flag==0)
+    {
+        printf("No hay notebooks que mostrar\n");
+    }
 
 }
 
@@ -184,12 +196,13 @@ void modificarNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTip
     system("cls");
     printf("*** Modificar notebook ***\n");
     mostrarNotebooks(notebooks, tam, tipos, tamTipo, marcas, tamMarca);
-    printf("Ingrese id: \n");
+    printf("Ingrese id de la notebook a modificar: \n");
     scanf("%d", &id);
 
     id = buscarNotebook(id, notebooks, tam);
 
-    if(id == -1){
+    if(id == -1)
+    {
         printf("No hay registro de una notebook con el id %d\n", id);
     }else{
         mostrarNotebook(notebooks[id], tipos, tamTipo, marcas, tamMarca);
@@ -203,19 +216,25 @@ void modificarNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTip
            switch(menuModificar()){
 
             case 1:
-                printf("Ingrese nuevo precio: \n");
+                printf("Ingrese nuevo precio (mayor a 0): \n");
                 scanf("%f", &notebooks[id].precio);
+                while(notebooks[id].precio <0)
+                    {
+                        printf("Error, ingrese un precio mayor a 0\n");
+                        scanf("%f", &notebooks[id].precio);
+                    }
                 break;
 
             case 2:
                 listarTipos(tipos, tamTipo);
                 printf("Ingrese el id del nuevo tipo: \n");
                 scanf("%d", &notebooks[id].idTipo);
-                while(notebooks[id].idTipo<1|| notebooks[id].idTipo>4){
-                    listarTipos(tipos, tamTipo);
-                    printf("Error, el id no es valido. Reingrese: \n");
-                     scanf("%d", &notebooks[id].idTipo);
-                }
+                while(notebooks[id].idTipo<1|| notebooks[id].idTipo>4)
+                    {
+                        listarTipos(tipos, tamTipo);
+                        printf("Error, el id no es valido. Reingrese: \n");
+                        scanf("%d", &notebooks[id].idTipo);
+                    }
                 break;
 
             case 3:
@@ -234,10 +253,10 @@ void modificarNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTip
 }
 
 void inicializarNotebooks(eNotebook notebooks[], int tam){
-for (int i=0; i<tam; i++)
-{
-   notebooks[i].isEmpty = 1;
-}
+    for (int i=0; i<tam; i++)
+    {
+        notebooks[i].isEmpty = 1;
+    }
 }
 
 //------------------------------------------------------------
@@ -245,13 +264,13 @@ int menuModificar(){
 int opcion;
 
 system("cls");
-printf("Ingrese la opcion que quiera modificar: \n");
+printf("Opciones a modificar: \n");
 printf("1) Precio\n");
 printf("2) Tipo\n");
 printf("3) Salir\n");
 
 
-printf("Ingrese opcion: \n");
+printf("Ingrese el numero de la opcion que desee: \n");
 fflush(stdin);
 scanf("%d", &opcion);
 
@@ -264,22 +283,25 @@ void ordenarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo
 
  eNotebook aux;
 
-for(int i=0; i<tam-1; i++){
-for(int j=i+1; j<tam; j++){
-if(notebooks[i].idMarca > notebooks[j].idMarca)
-{
-	aux = notebooks[i];
-	notebooks[i] = notebooks[j];
-	notebooks[j] = aux;
-}else if(notebooks[i].idMarca == notebooks[j].idMarca && notebooks[i].precio > notebooks[j].precio)
-{
-	aux = notebooks[i];
-	notebooks[i] = notebooks[j];
-	notebooks[j] = aux;
-}
-}//fin for j
-}//fin for i
- mostrarNotebooks(notebooks,tam, tipos, tamTipo, marcas, tamMarca);
+    for(int i=0; i<tam-1; i++)
+    {
+        for(int j=i+1; j<tam; j++)
+        {
+            if(notebooks[i].idMarca > notebooks[j].idMarca)
+            {
+                aux = notebooks[i];
+                notebooks[i] = notebooks[j];
+                notebooks[j] = aux;
+            }else if(notebooks[i].idMarca == notebooks[j].idMarca && notebooks[i].precio > notebooks[j].precio)
+            {
+                aux = notebooks[i];
+                notebooks[i] = notebooks[j];
+                notebooks[j] = aux;
+            }
+        }//fin for j
+    }//fin for i
+    printf("**** Notebooks ordenadas por marca y precio ****\n");
+    mostrarNotebooks(notebooks,tam, tipos, tamTipo, marcas, tamMarca);
 }
 
 
@@ -293,16 +315,17 @@ void bajaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eM
     system("cls");
     printf("*** Baja notebook ***\n");
     mostrarNotebooks(notebooks, tam, tipos, tamTipo, marcas, tamMarca);
-    printf("Ingrese id: \n");
+    printf("Ingrese el id de la notebook: \n");
     scanf("%d", &id);
 
     indice = buscarNotebook(id, notebooks, tam);
 
-    if(indice == -1){
+    if(indice == -1)
+    {
         printf("No hay registro de una notebook con el id %d\n", id);
     }else{
         mostrarNotebook(notebooks[indice], tipos, tamTipo, marcas, tamMarca);
-        printf("Confima baja? \n");
+        printf("Confima baja? Ingrese s o n \n");
         fflush(stdin);
         scanf("%c", &confirma);
 

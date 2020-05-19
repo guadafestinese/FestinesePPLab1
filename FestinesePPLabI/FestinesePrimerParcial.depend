@@ -64,7 +64,7 @@
 
 1589833104 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\marcas.h
 
-1589833121 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.c
+1589854008 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -102,4 +102,14 @@
 	"notebooks.h"
 	"marcas.h"
 	"servicios.h"
+
+1589853605 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebooks.h"
+	"marcas.h"
+	"tipos.h"
+	"servicios.h"
+	"trabajos.h"
 

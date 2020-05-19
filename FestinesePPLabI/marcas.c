@@ -5,14 +5,15 @@
 
 //-------------------------------------------------------------------------
 void cargarDescripcionMarca (char descripcion[], int id, eMarca marcas[], int tamMarca){
-//int todoOk=0;
-	for (int i=0; i<tamMarca; i++){
-	if (marcas[i].id == id){
-	strcpy(descripcion, marcas[i].descripcion);
-	//todoOk=1;
+
+	for (int i=0; i<tamMarca; i++)
+    {
+        if (marcas[i].id == id)
+        {
+            strcpy(descripcion, marcas[i].descripcion);
+        }
 	}
-	}
-	//return todoOk;
+
 }
 
 
