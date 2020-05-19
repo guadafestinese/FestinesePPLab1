@@ -19,7 +19,8 @@ int menu(){
     printf("7) Listar servicios\n");
     printf("8) Alta trabajo\n");
     printf("9) Listar trabajos\n");
-    printf("10) Salir\n");
+    printf("10) Informes\n");
+    printf("11) Salir\n");
 
     printf("Ingrese opcion: \n");
     fflush(stdin);
@@ -49,7 +50,7 @@ int buscarLibre(eNotebook notebooks[], int tam)
 }
 */
 
-int buscarLibre(eNotebook notebooks[], int tam)
+int buscarLibreNotebook(eNotebook notebooks[], int tam)
 {
 	int indice = -1;
 
@@ -64,18 +65,22 @@ int buscarLibre(eNotebook notebooks[], int tam)
   return indice;
 }
 //---------------------------------------------------------
-int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas){
+int altaNotebook(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas){
 
-    int i;
-
+    int indice;
     int todoOk=0;
-
     eNotebook auxNotebook;
 
 
-    for(i=0; i<tam; i++){
-        if(notebooks[i].isEmpty == 1)
-        {
+    system("cls");
+    printf("*** ALTA NOTEBOOK *** \n");
+    indice=buscarLibreNotebook(notebooks, tam);
+
+    if(indice == -1)
+    {
+        printf("No hay lugar para cargar otra notebook\n");
+        system("pause");
+    }else{
 
 
             printf("Ingrese modelo: \n");
@@ -116,13 +121,11 @@ int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eM
 
 
             auxNotebook.isEmpty = 0;
-            auxNotebook.id = i+1;
+            auxNotebook.id = id;
             todoOk = 1;
-            notebooks[i] = auxNotebook;
-            break;
+            notebooks[indice] = auxNotebook;
 
         }
-    }//fin for
 
 
    return todoOk;
@@ -149,17 +152,14 @@ int buscarNotebook(int id, eNotebook notebooks[], int tam){
 }
 
 //------------------------------------------------------------
-void mostrarNotebook(eNotebook note, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca)
-{
- if(note.isEmpty == 0)
-    {
+void mostrarNotebook(eNotebook note, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca){
         char descripcionMarca [20];
         char descripcionTipo[20];
         cargarDescripcionMarca(descripcionMarca, note.idMarca, marcas, tamMarca);
         cargarDescripcionTipo(descripcionTipo, note.idTipo, tipos, tamTipo);
 
         printf("%d 	%10s   %10s    %10s   %.2f\n", note.id, note.modelo, descripcionMarca, descripcionTipo, note.precio);
-    }
+
 
 }
 
@@ -173,8 +173,12 @@ void mostrarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo
 
     for(int i=0; i<tam; i++)
     {
-        mostrarNotebook(notebooks[i], tipos, tamTipo, marcas, tamMarca);
-        flag=1;
+        if(notebooks[i].isEmpty == 0)
+        {
+            mostrarNotebook(notebooks[i], tipos, tamTipo, marcas, tamMarca);
+            flag=1;
+        }
+
     }
 
     if(flag==0)

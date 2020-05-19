@@ -38,7 +38,7 @@ typedef struct{
  *
  */
 
-int altaTrabajo(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eServicio servicios[], int tamServ, eTrabajo trabajos[], int tamTrabajo);
+int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eServicio servicios[], int tamServ, eTrabajo trabajos[], int tamTrabajo);
 
 /** \brief Funcion para mostrar los trabajos
 
@@ -53,7 +53,7 @@ int altaTrabajo(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMa
  * \return -
  *
  */
-void listarTrabajos(eTrabajo trabajos[], int tam, eNotebook notebooks[], int tamNote, eServicio servicios[], int tamServ);
+void mostrarTrabajos(eTrabajo trabajos[], int tam, eNotebook notebooks[], int tamNote, eServicio servicios[], int tamServ);
 
 /** \brief Funcion para mostrar un solo trabajo
 
@@ -79,7 +79,7 @@ void mostrarTrabajo(eTrabajo trabajo, eNotebook notebooks[], int tamNote, eServi
  * \return -
  *
  */
-void cargarDescripcionServicioTrabajo (char descripcion[], int id, eServicio servicios[], int tam);
+int cargarDescripcionServicioTrabajo (char descripcion[], int id, eServicio servicios[], int tam);
 
 /** \brief Funcion para relacionar estructuras con ID
 
@@ -91,7 +91,7 @@ void cargarDescripcionServicioTrabajo (char descripcion[], int id, eServicio ser
  * \return -
  *
  */
-void cargarDescripcionNotebookTrabajo (char descripcion[], int id, eNotebook notebooks[], int tam);
+int cargarDescripcionNotebookTrabajo (char descripcion[], int id, eNotebook notebooks[], int tam);
 
 /** \brief Funcion para inicializar los trabajos, pone isEmpty en 1
  *

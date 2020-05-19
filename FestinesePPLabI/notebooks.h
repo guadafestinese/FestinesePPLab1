@@ -26,7 +26,7 @@ typedef struct{
  *
  */
 
-int altaNotebook( eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas);
+int altaNotebook(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas);
 
 /** \brief Funcion para modificar notebooks
  * \param eNotebook notebooks[], array de notebooks
