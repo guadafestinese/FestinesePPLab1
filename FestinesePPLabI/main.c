@@ -19,7 +19,7 @@ int main()
     eMarca marcas[TAMM] = {{1, "Compaq"},{2, "Asus"}, {3, "Acer"}, {4, "HP"}};
     eTipo tipos[TAMT] = { {1, "Gamer"}, {2, "Disenio"}, {3, "Ultrabook"}, {4, "Normalita"} };
     eServicio servicios[TAMS]= { {1, "Bateria", 250}, {2, "Antivirus", 300}, {3, "Actualizacion", 400}, {4, "Fuente", 600} };
-    eNotebook notebooks[TAMN] ={ {1, "Uno", 2, 3, 2000, 0}, {2, "Dos", 1, 3, 3000, 0},{3, "Tres", 1, 3, 3500, 0}, {4, "Cuatro", 2, 4, 5000, 0}, {5, "Cinco", 2, 4, 4600, 0}, {6, "Seis", 1, 3, 3200, 0}, {7, "Siete", 4, 2, 2600, 0}, {8, "Ocho", 3, 3, 5600, 0}, {9, "Nueve", 4,1, 4900, 0}, {10, "Diez", 1, 3, 3300, 0} };
+    eNotebook notebooks[TAMN]; //={ {1, "Uno", 2, 3, 2000, 0}, {2, "Dos", 1, 3, 3000, 0},{3, "Tres", 1, 3, 3500, 0}, {4, "Cuatro", 2, 4, 5000, 0}, {5, "Cinco", 2, 4, 4600, 0}, {6, "Seis", 1, 3, 3200, 0}, {7, "Siete", 4, 2, 2600, 0}, {8, "Ocho", 3, 3, 5600, 0}, {9, "Nueve", 4,1, 4900, 0}, {10, "Diez", 1, 3, 3300, 0} };
     eTrabajo trabajos[TAMT];
 
 
@@ -30,7 +30,7 @@ int main()
     int proximoIdMarca = 1000;
     int proximoIdTipo = 5000;
     int proximoIdServicio = 20000;
-    //inicializarNotebooks(notebooks, TAMN);
+    inicializarNotebooks(notebooks, TAMN);
 
 
     inicializarTrabajos(trabajos, TAMT);
@@ -42,7 +42,7 @@ int main()
 
     switch(menu()){
     case 1:
-/*
+
         if(altaNotebook(notebooks, TAMN, tipos, TAMT, marcas, TAMM) == 1){
             proximoIdMarca++;
             proximoIdTipo++;
@@ -50,7 +50,7 @@ int main()
         mostrarNotebooks(notebooks, TAMN, tipos, TAMT, marcas, TAMM);
         system("pause");
 
-*/
+
         break;
     case 2:
         modificarNotebook(notebooks, TAMN, tipos, TAMT, marcas, TAMM);

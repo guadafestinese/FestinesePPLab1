@@ -56,3 +56,50 @@
 	"trabajos.h"
 	"notebooks.h"
 
+1589833089 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\marcas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marcas.h"
+
+1589833104 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\marcas.h
+
+1589833121 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebooks.h"
+
+1589833138 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.h
+	"tipos.h"
+	"marcas.h"
+
+1589833215 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\tipos.h
+
+1589833163 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\servicios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicios.h"
+
+1589833180 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\servicios.h
+
+1589833199 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\tipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipos.h"
+
+1589833229 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\trabajos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"trabajos.h"
+	"notebooks.h"
+
+1589833245 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\trabajos.h
+	"tipos.h"
+	"notebooks.h"
+	"marcas.h"
+	"servicios.h"
+
