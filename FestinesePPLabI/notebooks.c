@@ -6,26 +6,26 @@
 
 int menu(){
 
-int opcion;
+    int opcion;
 
-system("cls");
-printf("*** Menu de opciones ***\n");
-printf("1) Alta notebook\n");
-printf("2) Modificar notebook\n");
-printf("3) Baja notebook\n");
-printf("4) Listar notebooks\n");
-printf("5) Listar Marcas\n");
-printf("6) Listar tipos\n");
-printf("7) Listar servicios\n");
-printf("8) Alta trabajo\n");
-printf("9) Listar trabajos\n");
-printf("10) Salir\n");
+    system("cls");
+    printf("*** Menu de opciones ***\n");
+    printf("1) Alta notebook\n");
+    printf("2) Modificar notebook\n");
+    printf("3) Baja notebook\n");
+    printf("4) Listar notebooks\n");
+    printf("5) Listar Marcas\n");
+    printf("6) Listar tipos\n");
+    printf("7) Listar servicios\n");
+    printf("8) Alta trabajo\n");
+    printf("9) Listar trabajos\n");
+    printf("10) Salir\n");
 
-printf("Ingrese opcion: \n");
-fflush(stdin);
-scanf("%d", &opcion);
+    printf("Ingrese opcion: \n");
+    fflush(stdin);
+    scanf("%d", &opcion);
 
-return opcion;
+    return opcion;
 }
 //------------------------------------------------------
 void myFgets (char nombre [], int cant)
@@ -135,7 +135,7 @@ int altaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eM
 //---------------------------------------------------------------------------
 int buscarNotebook(int id, eNotebook notebooks[], int tam){
 
-int indice= -1;
+  int indice= -1;
 
     for(int i=0; i<tam; i++)
     {
@@ -145,7 +145,7 @@ int indice= -1;
             break;
         }
     }
-return indice;
+  return indice;
 }
 
 //------------------------------------------------------------
@@ -166,10 +166,10 @@ void mostrarNotebook(eNotebook note, eTipo tipos[], int tamTipo, eMarca marcas[]
 //-----------------------------------------------------------------
 void mostrarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca){
 
-int flag=0;
-system("cls");
-printf("****** LISTA NOTEBOOKS ******\n");
-printf("ID	      Modelo	  Marca      	Tipo	 Precio	\n");
+ int flag=0;
+ system("cls");
+ printf("****** LISTA NOTEBOOKS ******\n");
+ printf("ID	      Modelo	  Marca      	Tipo	 Precio	\n");
 
     for(int i=0; i<tam; i++)
     {
@@ -261,20 +261,20 @@ void inicializarNotebooks(eNotebook notebooks[], int tam){
 
 //------------------------------------------------------------
 int menuModificar(){
-int opcion;
+    int opcion;
 
-system("cls");
-printf("Opciones a modificar: \n");
-printf("1) Precio\n");
-printf("2) Tipo\n");
-printf("3) Salir\n");
+    system("cls");
+    printf("Opciones a modificar: \n");
+    printf("1) Precio\n");
+    printf("2) Tipo\n");
+    printf("3) Salir\n");
 
 
-printf("Ingrese el numero de la opcion que desee: \n");
-fflush(stdin);
-scanf("%d", &opcion);
+    printf("Ingrese el numero de la opcion que desee: \n");
+    fflush(stdin);
+    scanf("%d", &opcion);
 
-return opcion;
+    return opcion;
 }
 
 //
@@ -300,7 +300,7 @@ void ordenarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo
             }
         }//fin for j
     }//fin for i
-    printf("**** Notebooks ordenadas por marca y precio ****\n");
+
     mostrarNotebooks(notebooks,tam, tipos, tamTipo, marcas, tamMarca);
 }
 

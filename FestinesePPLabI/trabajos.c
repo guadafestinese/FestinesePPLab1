@@ -6,10 +6,10 @@
 #include "notebooks.h"
 
 void inicializarTrabajos(eTrabajo trabajos[], int tam){
-for (int i=0; i<tam; i++)
-{
-   trabajos[i].isEmpty = 1;
-}
+    for (int i=0; i<tam; i++)
+    {
+        trabajos[i].isEmpty = 1;
+    }
 }
 
 
