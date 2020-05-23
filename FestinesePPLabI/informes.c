@@ -344,7 +344,7 @@ void mostrarNotebooksPorMarcaYTipo(eNotebook notebooks[], int tamN, eMarca marca
     printf("Selecione una marca por su ID: ");
     fflush(stdin);
     scanf("%d", &auxMarca);
-    while(auxMarca<1000 || auxMarca>5000){
+    while(auxMarca<1000 || auxMarca>1003){
         listarMarcas(marcas, tamMarca);
         printf("ERROR, id invalido. Selecione una marca por su ID: ");
         fflush(stdin);
