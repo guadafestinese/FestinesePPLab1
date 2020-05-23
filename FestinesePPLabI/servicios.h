@@ -17,5 +17,14 @@ typedef struct{
  */
 
 void listarServicios(eServicio servicios[], int tamS);
+//--------------------------------------------------------------------------------------------------
+/** \brief Funcion para buscar un servicio por su ID
+ *
+ * \param int id, id a buscar
+ * \param eServicio servicios[], array de servicios
+ * \param int tamServ, tamaño del array de servicios
+ * \return devuelve -1 si no encuentra el ID, y si lo encuentra devuelve el ID
+ *
+ */
 
-
+int buscarServicio(int id, eServicio servicios[], int tamServ);

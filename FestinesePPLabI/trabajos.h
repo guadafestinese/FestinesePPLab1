@@ -22,6 +22,7 @@ typedef struct{
 #endif // TRABAJO_H_INCLUDED
 
 /** \brief
+ * \param int id
  * \param eNotebook notebooks[], array de notebooks
  * \param int tam, tamaño del array de notebooks
  * \param eTipo tipos[], array de tipos
@@ -32,13 +33,15 @@ typedef struct{
  * \param int tamServ, tamaño del array de servicios
  * \param eTrabajo trabajos[], array de trabajos
  * \param int tamTrabajo, tamaño del array de trabajos
+ * \param eCliente clientes[], array de clientes
+ * \param int tamCliente, tamaño del array de clientes
 
 
  * \return Devuelve 1 si se cargo y 0 si no se cargo
  *
  */
 
-int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eServicio servicios[], int tamServ, eTrabajo trabajos[], int tamTrabajo);
+int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eServicio servicios[], int tamServ, eTrabajo trabajos[], int tamTrabajo, eCliente clientes[], int tamCliente);
 
 /** \brief Funcion para mostrar los trabajos
 
@@ -76,22 +79,22 @@ void mostrarTrabajo(eTrabajo trabajo, eNotebook notebooks[], int tamNote, eServi
  * \param eServicio servicios[], array de servicios
  * \param int tam, tamaño del array de servicios
 
- * \return -
+ * \return devuelve 1 si se cargo y 0 si no se cargo
  *
  */
 int cargarDescripcionServicioTrabajo (char descripcion[], int id, eServicio servicios[], int tam);
 
 /** \brief Funcion para relacionar estructuras con ID
 
- * \param char descripcion[], descripcion a cargar
+ * \param char modelo[], descripcion a cargar
  * \param int id, id que se quiere relacionar
  * \param eNotebook notebooks[], array de notebooks
  * \param int tam, tamaño del array de notebooks
 
- * \return -
+ * \return devuelve 1 si se cargo y 0 si no se cargo
  *
  */
-int cargarDescripcionNotebookTrabajo (char descripcion[], int id, eNotebook notebooks[], int tam);
+int cargarModeloNotebookTrabajo (char modelo[], int id, eNotebook notebooks[], int tam);
 
 /** \brief Funcion para inicializar los trabajos, pone isEmpty en 1
  *

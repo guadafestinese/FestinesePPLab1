@@ -26,7 +26,7 @@ int buscarLibreTrabajo (eTrabajo trabajos[], int tamTr)
     return indice;
 }
 
-int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eServicio servicios[], int tamServ, eTrabajo trabajos[], int tamTrabajo){
+int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eServicio servicios[], int tamServ, eTrabajo trabajos[], int tamTrabajo, eCliente clientes[], int tamCliente){
 
     int todoOk=0;
     int indice;
@@ -40,7 +40,7 @@ int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTi
         printf("No hay lugar para otro trabajo\n");
         system("pause");
     }else{
-            mostrarNotebooks(notebooks, tam, tipos, tamTipos, marcas, tamMarcas);
+            mostrarNotebooks(notebooks, tam, tipos, tamTipos, marcas, tamMarcas, clientes, tamCliente);
 
             printf("Ingrese el ID de la notebook que desee: \n");
             scanf("%d", &nuevoTrabajo.idNotebook);
@@ -88,14 +88,14 @@ int altaTrabajo(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTi
    return todoOk;
 }
 
-int cargarDescripcionNotebookTrabajo (char descripcion[], int id, eNotebook notebooks[], int tam){
+int cargarModeloNotebookTrabajo (char modelo[], int id, eNotebook notebooks[], int tam){
 
     int todoOk =0;
 	for (int i=0; i<tam; i++)
     {
         if (notebooks[i].id == id)
         {
-            strcpy(descripcion, notebooks[i].modelo);
+            strcpy(modelo, notebooks[i].modelo);
             todoOk =1;
         }
 	}
@@ -117,13 +117,13 @@ int cargarDescripcionServicioTrabajo (char descripcion[], int id, eServicio serv
 
 void mostrarTrabajo(eTrabajo trabajo, eNotebook notebooks[], int tamNote, eServicio servicios[], int tamServ)
 {
-        char descripcionNote[20];
+        char modeloNote[20];
         char descripcionServ[20];
 
-        cargarDescripcionNotebookTrabajo(descripcionNote, trabajo.idNotebook, notebooks, tamNote);
+        cargarModeloNotebookTrabajo(modeloNote, trabajo.idNotebook, notebooks, tamNote);
         cargarDescripcionServicioTrabajo(descripcionServ, trabajo.idServicio, servicios, tamServ);
 
-        printf("    %d    %10s     %10s     %02d/%02d/%d\n", trabajo.id, descripcionNote, descripcionServ, trabajo.fecha.dia, trabajo.fecha.mes, trabajo.fecha.anio);
+        printf("%2d      %10s       %15s     %02d/%02d/%d\n", trabajo.id,modeloNote, descripcionServ, trabajo.fecha.dia, trabajo.fecha.mes, trabajo.fecha.anio);
 
 }
 
@@ -133,15 +133,17 @@ void mostrarTrabajos(eTrabajo trabajos[], int tam, eNotebook notebooks[], int ta
 
 	system("cls");
 	printf("\n*** Listado de trabajos ***\n\n");
-	printf("   Id       NOTEBOOK     SERVICIO           FECHA\n");
+	printf("ID            NOTEBOOK         SERVICIO        FECHA\n");
 	for (int i=0; i< tam; i++)
 	{
-		  if(trabajos[i].isEmpty == 0)
-			{
-				mostrarTrabajo(trabajos[i], notebooks, tamNote, servicios, tamServ);
-				flag=1;
-			}
-	}
+         if(trabajos[i].isEmpty == 0)
+         {
+                mostrarTrabajo(trabajos[i], notebooks, tamNote, servicios, tamServ);
+                flag=1;
+         }
+    }
+
+
 	if(flag==0)
 	{
 		printf("No hay trabajos que mostrar\n");

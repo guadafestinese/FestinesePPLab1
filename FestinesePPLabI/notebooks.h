@@ -1,5 +1,6 @@
 #include "tipos.h"
 #include "marcas.h"
+#include "clientes.h"
 
 #ifndef NOTEBOOK_H_INCLUDED
 #define NOTEBOOK_H_INCLUDED
@@ -10,6 +11,7 @@ typedef struct{
     int idTipo;
     float precio;
     int isEmpty;
+    int idCliente;
 }eNotebook;
 
 #endif // NOTEBOOK_H_INCLUDED
@@ -26,8 +28,9 @@ typedef struct{
  *
  */
 
-int altaNotebook(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas);
+ int altaNotebook(int idNote, eNotebook notebooks[], int tam, eTipo tipos[], int tamTipos, eMarca marcas[], int tamMarcas, eCliente clientes[], int tamCliente);
 
+//------------------------------------------------------------------------------------------------------------------------
 /** \brief Funcion para modificar notebooks
  * \param eNotebook notebooks[], array de notebooks
  * \param int tam, tamaño del array de notebooks
@@ -39,7 +42,7 @@ int altaNotebook(int id, eNotebook notebooks[], int tam, eTipo tipos[], int tamT
  *
  */
 
-void modificarNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca);
+void modificarNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca, eCliente clientes[], int tamCliente);
 
 /** \brief Funcion para mostrar un menu de opciones
  *
@@ -62,7 +65,7 @@ int menuModificar();
  *
  */
 
-void ordenarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca);
+void ordenarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca, eCliente clientes[], int tamCliente);
 
 /** \brief Funcion para validar cadenas de caracteres
  *
@@ -97,7 +100,7 @@ int buscarNotebook(int id, eNotebook notebooks[], int tam);
  *
  */
 
-void mostrarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca);
+void mostrarNotebooks(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca, eCliente clientes[], int tamCliente);
 
 /** \brief Funcion para inicializar las estructuras de notebook en isEmpty=1
  *
@@ -118,7 +121,7 @@ void inicializarNotebooks(eNotebook notebooks[], int tam);
  * \return -
  *
  */
-void mostrarNotebook(eNotebook note, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca);
+void mostrarNotebook(eNotebook note, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca, eCliente clientes[], int tamCliente);
 
 /** \brief Funcion para mostrar un menu de opciones
  *
@@ -143,6 +146,5 @@ int menu();
  *
  */
 
-void bajaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca);
-
+void bajaNotebook(eNotebook notebooks[], int tam, eTipo tipos[], int tamTipo, eMarca marcas[], int tamMarca, eCliente clientes[], int tamCliente);
 

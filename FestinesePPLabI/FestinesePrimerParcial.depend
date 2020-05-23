@@ -64,25 +64,26 @@
 
 1589833104 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\marcas.h
 
-1589873671 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.c
+1590192646 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"notebooks.h"
 
-1589872672 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.h
+1590185940 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\notebooks.h
 	"tipos.h"
 	"marcas.h"
+	"clientes.h"
 
 1589833215 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\tipos.h
 
-1589833163 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\servicios.c
+1590191846 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\servicios.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"servicios.h"
 
-1589833180 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\servicios.h
+1590185786 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\servicios.h
 
 1589854161 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\tipos.c
 	<stdio.h>
@@ -90,20 +91,20 @@
 	<string.h>
 	"tipos.h"
 
-1589873604 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\trabajos.c
+1590188607 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\trabajos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"trabajos.h"
 	"notebooks.h"
 
-1589873164 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\trabajos.h
+1590191704 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\trabajos.h
 	"tipos.h"
 	"notebooks.h"
 	"marcas.h"
 	"servicios.h"
 
-1589873716 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\main.c
+1590192088 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -111,5 +112,27 @@
 	"marcas.h"
 	"tipos.h"
 	"servicios.h"
+	"trabajos.h"
+	"clientes.h"
+	"informes.h"
+
+1590185904 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+
+1590185904 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\clientes.h
+
+1590192576 source:c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"informes.h"
+
+1590190090 c:\users\usuario\desktop\programacion2020\festineseprimerparcial\festinesepplabi\informes.h
+	"notebooks.h"
+	"tipos.h"
+	"marcas.h"
 	"trabajos.h"
 
